@@ -38,7 +38,7 @@ def training(model, x, y):
 
     # training hiperparameters
     n_steps = 50000
-    learning_rate = 0.1        # try different values
+    learning_rate = 0.06       # try different values
     minibatch_size = 32
 
     loss_fn = F.binary_cross_entropy
@@ -57,7 +57,8 @@ def training(model, x, y):
 
         # TODO forward pass modelu + policzenie wartości funkcji kosztu (użyj loss_fn zdefiniowanego wyżej)
         y_pred = model.forward(x_batch).squeeze()  # squeeze żeby mieć [batch_size], nie [batch_size, 1]
-        loss = loss_fn(y_pred, y_batch.float())
+        loss = loss_fn(y_pred, y_batch.squeeze().float())
+
 
 
         # backward pass
@@ -159,7 +160,7 @@ def classify_spirals(student_id, do_data_inspection=True, do_model_inpection=Tru
 
 if __name__ == '__main__':
 
-    student_id = 198157         # Twój numer indeksu, np. 102247
+    student_id = 198157        
     torch.manual_seed(student_id)
 
     classify_spirals(student_id,

@@ -27,8 +27,8 @@ def zad1_single_neuron(student_id):
     n_samples, n_features = x.shape
 
     # zakomentuj, jak juz nie potrzebujesz
-    inspect_data(x, y)
-    plot_data(x, y, plot_xy_range=[-1, 2])
+    #inspect_data(x, y)
+    #plot_data(x, y, plot_xy_range=[-1, 2])
 
     # model pojedynczego neuronu
     class SingleNeuron:
@@ -55,7 +55,7 @@ def zad1_single_neuron(student_id):
     # model.b[:] = [b1]
 
     model.W[:, 0] = [10, 10]
-    model.b[:] = [-5]
+    model.b[:] = [-15]
 
 
     # działanie i ocena modelu
@@ -74,8 +74,8 @@ def zad2_two_layer_net(student_id):
     n_samples, n_features = x.shape
 
     # zakomentuj, jak juz nie potrzebujesz
-    inspect_data(x, y)
-    plot_data(x, y, plot_xy_range=[-1, 2])
+    #inspect_data(x, y)
+    #plot_data(x, y, plot_xy_range=[-1, 2])
 
     # warstwa czyli n_out pojedynczych, niezależnych neuronów operujących na tym samym wejściu\
     # (i-ty neuron ma swoje parametry w i-tej kolumnie macierzy W i na i-tej pozycji wektora b)
@@ -140,7 +140,8 @@ def zad2_two_layer_net(student_id):
 if __name__ == '__main__':
     # visualize_activation_function(relu)
 
-    student_id = None         # Twój numer indeksu, np. 102247
+    student_id = 198157         # Twój numer indeksu, np. 102247
 
     zad1_single_neuron(student_id)
-    # zad2_two_layer_net(student_id)
+
+    zad2_two_layer_net(student_id)
